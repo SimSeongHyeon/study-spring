@@ -23,6 +23,11 @@ class MemberServiceTest {
         memberService = new MemberService(memberRepository);
     }
 
+    @AfterEach
+    public void afterEach() {
+        memberRepository.clearStore();
+    }
+
     //테스트에선 한글로 적어도 괜찮음 , 실제 빌드에 적용 X
     @Test
     void 회원가입() {
